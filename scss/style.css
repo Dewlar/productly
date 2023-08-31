@@ -43,6 +43,48 @@ h5 {
   line-height: 26px;
 }
 
+.button {
+  font-family: "Open Sans", Verdana, sans-serif;
+  padding: 11px 25px 13px;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.heaader__buttons .button {
+  margin-left: 14px;
+}
+
+.heaader__buttons .button:first-child {
+  margin-left: 0;
+}
+
+.button_bordered {
+  background: #FFFFFF;
+  border: 1px solid #D7D7D7;
+  color: #544837;
+}
+
+.button_colored {
+  background: #FF9900;
+  color: #FFFFFF;
+  border: 1px solid #FF9900;
+}
+
+.button_colored:hover {
+  background: #FF7549;
+  border-color: #FF7549;
+}
+
+.button_bordered:hover {
+  background: #BCD0E5;
+  border-color: #BCD0E5;
+}
+
 .wrapper {
   max-width: 1197px;
   margin: auto;
