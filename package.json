@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Dewlar/productly#readme",
   "dependencies": {
-    "normalize-scss": "^7.0.1"
+    "normalize-scss": "^7.0.1",
+    "sass": "^1.66.1"
   }
 }

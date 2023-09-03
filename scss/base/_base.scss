@@ -6,6 +6,7 @@ body {
   font-size: 1.6rem;
   font-family: 'Open Sans', Verdana, sans-serif;
 }
+
 // @include mixin font ($size: font-size, $style: font-style, $weight: font-weight, $height: line-height)
 h1 {
   @extend %font-add;
