@@ -7,14 +7,14 @@
   line-height: 2.2rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: all .3s;
+  @extend %transition;
 }
 
-.heaader__buttons .button {
+.header__buttons .button {
   margin-left: 14px;
 }
 
-.heaader__buttons .button:first-child {
+.header__buttons .button:first-child {
   margin-left: 0;
 }
 

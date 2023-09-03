@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Dewlar/productly/issues"
   },
-  "homepage": "https://github.com/Dewlar/productly#readme"
+  "homepage": "https://github.com/Dewlar/productly#readme",
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  }
 }
