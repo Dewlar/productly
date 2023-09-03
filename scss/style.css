@@ -418,8 +418,12 @@ template {
   transition: all 0.3s ease-out;
 }
 
-.promo__text, h1 {
+.promo__text, .link-button, h1 {
   font-family: "Poppins", Verdana, sans-serif;
+}
+
+.button, body {
+  font-family: "Open Sans", Verdana, sans-serif;
 }
 
 html {
@@ -428,7 +432,9 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Open Sans", Verdana, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.6rem;
 }
 
 h1 {
@@ -467,7 +473,6 @@ h5 {
 }
 
 .button {
-  font-family: "Open Sans", Verdana, sans-serif;
   padding: 11px 25px 13px;
   font-size: 1.6rem;
   font-style: normal;
@@ -495,6 +500,13 @@ h5 {
   border-color: #FF7549;
 }
 
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: #FF9900;
+}
+
 .header__buttons .button {
   margin-left: 14px;
 }
@@ -505,6 +517,17 @@ h5 {
 
 .logo-svg:hover .logo-path {
   fill: #FF9900;
+}
+
+.ico {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.ico_play {
+  background-image: url("../img/icons/play.svg");
+  width: 18px;
+  height: 19px;
 }
 
 .wrapper {
