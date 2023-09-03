@@ -1,3 +1,6 @@
+@import "../node_modules/normalize-scss/sass/normalize";
+@include normalize();
+
 @import "abstract/constants";
 @import "abstract/mixins";
 @import "abstract/placeholders";
@@ -14,3 +17,7 @@
 // Components
 @import "components/contact-us";
 @import "components/promo";
+
+* {
+  box-sizing: border-box;
+}
