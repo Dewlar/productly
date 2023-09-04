@@ -93,7 +93,7 @@ pre {
  */
 a {
   background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
+  /*-webkit-text-decoration-skip: objects; !* 2 *!*/
 }
 
 /* Text-level semantics
@@ -104,7 +104,7 @@ a {
  */
 abbr[title] {
   border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
+  /*text-decoration: underline; !* 2 *!*/
   text-decoration: underline dotted; /* 2 */
 }
 
@@ -472,6 +472,11 @@ h5 {
   line-height: 2.6rem;
 }
 
+.block-shadowed {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
 .button {
   padding: 11px 25px 13px;
   font-size: 1.6rem;
@@ -573,6 +578,32 @@ h5 {
   background-image: url("../img/icons/clock.svg");
   width: 12px;
   height: 17px;
+}
+
+.tags {
+  display: flex;
+}
+.tags > * {
+  margin-right: 7px;
+}
+
+.tag {
+  border-radius: 90px;
+  padding: 0 14px;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.8rem;
+}
+.tag_selected {
+  background-color: #FF9900;
+  color: #FFFFFF;
+}
+.tag_bordered {
+  border: 1px solid #D7D7D7;
+}
+.tag_colored {
+  background-color: #F5F5F5;
 }
 
 .wrapper {
@@ -693,6 +724,34 @@ a:hover {
 
 .tool__title {
   margin: 0 0 16px;
+}
+
+.strategies {
+  padding: 30px 0;
+}
+
+.strategies__title {
+  margin: 0 0 14px;
+}
+
+.strategies__description {
+  margin: 0 0 24px;
+}
+
+.strategies__tags {
+  margin: 0 0 31px;
+}
+
+.strategy-wrapper > * {
+  margin: 0 0 30px;
+}
+
+.strategy__content {
+  padding: 24px 35px 26px 33px;
+}
+
+.strategy__name {
+  margin: 0 0 29px;
 }
 
 * {
