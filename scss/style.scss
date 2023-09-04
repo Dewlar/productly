@@ -14,11 +14,13 @@
 // Layouts
 @import "layout/wrapper";
 @import "layout/header";
+@import "layout/columns";
 
 // Components
 @import "components/contact-us";
 @import "components/promo";
 @import "components/navigation";
+@import "components/tools";
 
 * {
   box-sizing: border-box;

@@ -530,6 +530,51 @@ h5 {
   height: 19px;
 }
 
+.icon-square {
+  width: 50px;
+  height: 50px;
+  border-radius: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-square_yellow {
+  background-color: #FAB005;
+}
+.icon-square_red {
+  background-color: #F03E3D;
+}
+.icon-square_blue {
+  background-color: #4DADF7;
+}
+.icon-square_violet {
+  background-color: #7752BE;
+}
+
+.ico_arrow {
+  background-image: url("../img/icons/arrow.svg");
+  width: 12px;
+  height: 17px;
+}
+
+.ico_snake {
+  background-image: url("../img/icons/snake.svg");
+  width: 12px;
+  height: 17px;
+}
+
+.ico_heart {
+  background-image: url("../img/icons/heart.svg");
+  width: 12px;
+  height: 17px;
+}
+
+.ico_clock {
+  background-image: url("../img/icons/clock.svg");
+  width: 12px;
+  height: 17px;
+}
+
 .wrapper {
   max-width: 1197px;
   margin: auto;
@@ -545,6 +590,33 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.layout-4-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.layout-4-col > * {
+  flex-basis: 25%;
+}
+
+.layout-3-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.layout-3-col > * {
+  flex-basis: 30%;
+}
+
+.layout-2-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.layout-2-col > * {
+  flex-basis: 45%;
 }
 
 .contact-us {
@@ -597,6 +669,30 @@ h5 {
 
 a:hover {
   color: #FF9900;
+}
+
+.tools__wrapper {
+  padding-bottom: 90px;
+  background: url(../img/backgrounds/tools-bg.svg) no-repeat center bottom;
+}
+
+.tools__title {
+  max-width: 46.2rem;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.tools__button {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.tool__icon {
+  margin-bottom: 30px;
+}
+
+.tool__title {
+  margin: 0 0 16px;
 }
 
 * {
