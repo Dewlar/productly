@@ -1,0 +1,35 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  @extend %font-primary;
+  @include font($size: 1.6rem, $height: 2.6rem, $weight: normal);
+}
+
+// @include mixin font ($size: font-size, $style: font-style, $weight: font-weight, $height: line-height)
+h1 {
+  @extend %font-add;
+  @include font(4.4rem, normal, 700, 5.4rem);
+}
+
+h2 {
+  @include font(3.4rem);
+}
+
+h3 {
+  @include font($size: 2.4rem, $height: 3.4rem);
+}
+
+h4 {
+  @include font($size: 2.2rem, $weight: 600);
+}
+
+h5 {
+  @include font($size: 1.6rem, $height: 2.6rem);
+}
+
+.block-shadowed {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
