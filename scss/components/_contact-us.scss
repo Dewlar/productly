@@ -3,6 +3,36 @@
   padding: 62px 82px;
 }
 
+.contact-us__content {
+  max-width: 527px;
+}
+
+.contact-us__title {
+  margin: 0 0 16px;
+}
+
+.contact-us__text {
+  margin: 0 0 33px
+}
+
+.contact-us__link {
+  margin: 0 0 19px;
+  display: flex;
+  align-items: center;
+  @include font($size: 2.5rem, $height: 2.6rem, $weight: normal);
+
+  a {
+    margin: 0 0 0 11px;
+    text-decoration: none;
+    color: $color-text;
+    @extend %transition;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .contact-us__form {
   input, textarea {
     border: 1px solid $color-light;
@@ -31,4 +61,8 @@
   > * {
     min-width: 117px;
   }
+}
+
+::placeholder{
+  color: $color-text-placeholder;
 }

@@ -414,7 +414,7 @@ template {
   display: none;
 }
 
-.navigation__link, .footer-navigation__links a, .logo-path, .button {
+.navigation__link > a, .contact-us__link a, .footer-navigation__links a, .logo-path, .button {
   transition: all 0.3s ease-out;
 }
 
@@ -535,6 +535,18 @@ h5 {
   height: 19px;
 }
 
+.icon-round {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-round_white {
+  background-color: #FFFFFF;
+}
+
 .icon-square {
   width: 50px;
   height: 50px;
@@ -578,6 +590,18 @@ h5 {
   background-image: url("../img/icons/clock.svg");
   width: 12px;
   height: 17px;
+}
+
+.ico_phone {
+  background-image: url("../img/icons/phone.svg");
+  width: 13px;
+  height: 13px;
+}
+
+.ico_letter {
+  background-image: url("../img/icons/letter.svg");
+  width: 11px;
+  height: 11px;
 }
 
 .tags {
@@ -688,6 +712,36 @@ h5 {
   padding: 62px 82px;
 }
 
+.contact-us__content {
+  max-width: 527px;
+}
+
+.contact-us__title {
+  margin: 0 0 16px;
+}
+
+.contact-us__text {
+  margin: 0 0 33px;
+}
+
+.contact-us__link {
+  margin: 0 0 19px;
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2.6rem;
+}
+.contact-us__link a {
+  margin: 0 0 0 11px;
+  text-decoration: none;
+  color: #544837;
+}
+.contact-us__link a:hover {
+  text-decoration: underline;
+}
+
 .contact-us__form input, .contact-us__form textarea {
   border: 1px solid #FFFFFF;
   background-color: #FFFFFF;
@@ -710,6 +764,10 @@ h5 {
 
 .contact-us__button > * {
   min-width: 117px;
+}
+
+::placeholder {
+  color: #C6C6C6;
 }
 
 .promo {
@@ -745,18 +803,23 @@ h5 {
 
 .navigation {
   display: flex;
+  gap: 17px;
+  padding: 0;
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 2.8rem;
 }
 
 .navigation__link {
   list-style: none;
-  padding: 0 10px;
+  flex: 0 0 63px;
 }
-
-a:hover {
+.navigation__link > a {
+  text-decoration: none;
+  color: #544837;
+}
+.navigation__link > a:hover {
   color: #FF9900;
 }
 
