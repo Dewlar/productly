@@ -2,6 +2,14 @@
 .tools__wrapper {
   padding-bottom: 90px;
   background: url(../img/backgrounds/tools-bg.svg) no-repeat center bottom;
+  background-size: 100%;
+
+  @include media-tablet {
+    padding-bottom: 53px;
+  }
+  @include media-mobile {
+    padding-bottom: 47px;
+  }
 }
 
 .tools__title {
@@ -16,6 +24,32 @@
 }
 
 // each tool block
+.tool-container {
+  @include media-tablet {
+    flex-wrap: wrap;
+    > .tool {
+      flex-basis: 43%;
+      margin-bottom: 41px;
+    }
+    > .tool:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+  }
+  @include media-mobile {
+    flex-wrap: wrap;
+    > .tool {
+      flex-basis: 100%;
+      margin-bottom: 31px;
+    }
+  }
+}
+
+.tool {
+  @include media-tablet {
+    text-align: center;
+  }
+}
+
 .tool__icon {
   margin-bottom: 30px;
 }

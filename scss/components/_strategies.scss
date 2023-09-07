@@ -3,6 +3,10 @@
   padding: 30px 0;
   @include media-tablet {
     text-align: center;
+    padding: 51px 0 30px;
+  }
+  @include media-mobile {
+    padding: 63px 0 30px;
   }
 }
 

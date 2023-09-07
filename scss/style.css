@@ -545,7 +545,6 @@ h5 {
 }
 
 .ico {
-  cursor: pointer;
   display: inline-block;
 }
 
@@ -596,19 +595,19 @@ h5 {
 
 .ico_snake {
   background-image: url("../img/icons/snake.svg");
-  width: 12px;
-  height: 17px;
+  width: 18px;
+  height: 14px;
 }
 
 .ico_heart {
   background-image: url("../img/icons/heart.svg");
-  width: 12px;
-  height: 17px;
+  width: 17px;
+  height: 15px;
 }
 
 .ico_clock {
   background-image: url("../img/icons/clock.svg");
-  width: 12px;
+  width: 15px;
   height: 17px;
 }
 
@@ -752,7 +751,7 @@ h5 {
   justify-content: space-between;
 }
 .layout-4-col > * {
-  flex-basis: 25%;
+  flex-basis: 21%;
 }
 
 .layout-3-col {
@@ -983,6 +982,17 @@ h5 {
 .tools__wrapper {
   padding-bottom: 90px;
   background: url(../img/backgrounds/tools-bg.svg) no-repeat center bottom;
+  background-size: 100%;
+}
+@media (max-width: 768px) {
+  .tools__wrapper {
+    padding-bottom: 53px;
+  }
+}
+@media (max-width: 414px) {
+  .tools__wrapper {
+    padding-bottom: 47px;
+  }
 }
 
 .tools__title {
@@ -994,6 +1004,34 @@ h5 {
 .tools__button {
   margin-top: 60px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tool-container {
+    flex-wrap: wrap;
+  }
+  .tool-container > .tool {
+    flex-basis: 43%;
+    margin-bottom: 41px;
+  }
+  .tool-container > .tool:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 414px) {
+  .tool-container {
+    flex-wrap: wrap;
+  }
+  .tool-container > .tool {
+    flex-basis: 100%;
+    margin-bottom: 31px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tool {
+    text-align: center;
+  }
 }
 
 .tool__icon {
@@ -1010,6 +1048,12 @@ h5 {
 @media (max-width: 768px) {
   .strategies {
     text-align: center;
+    padding: 51px 0 30px;
+  }
+}
+@media (max-width: 414px) {
+  .strategies {
+    padding: 63px 0 30px;
   }
 }
 
