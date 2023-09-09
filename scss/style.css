@@ -807,15 +807,42 @@ h5 {
 
 .contact-us {
   background: #FFEEE1;
-  padding: 62px 82px;
+  padding: 62px 0 82px;
+}
+@media (max-width: 768px) {
+  .contact-us {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-us-container {
+    flex-direction: column;
+  }
 }
 
 .contact-us__content {
   max-width: 527px;
 }
+@media (max-width: 768px) {
+  .contact-us__content {
+    max-width: 100%;
+    margin-bottom: 52px;
+  }
+}
+@media (max-width: 414px) {
+  .contact-us__content {
+    margin-bottom: 22px;
+  }
+}
 
 .contact-us__title {
   margin: 0 0 16px;
+}
+@media (max-width: 414px) {
+  .contact-us__title {
+    margin: 0 0 8px;
+  }
 }
 
 .contact-us__text {
@@ -830,6 +857,19 @@ h5 {
   font-style: normal;
   font-weight: normal;
   line-height: 2.6rem;
+}
+@media (max-width: 768px) {
+  .contact-us__link {
+    justify-content: center;
+  }
+}
+@media (max-width: 414px) {
+  .contact-us__link {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+  }
 }
 .contact-us__link a {
   margin: 0 0 0 11px;
@@ -859,9 +899,26 @@ h5 {
 .contact-us__line {
   margin: 0 0 19px;
 }
+@media (max-width: 414px) {
+  .contact-us__line {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .contact-us__line > * {
+    margin-bottom: 16px;
+  }
+}
 
 .contact-us__button > * {
   min-width: 117px;
+}
+@media (max-width: 414px) {
+  .contact-us__button {
+    margin-top: 24px;
+  }
+  .contact-us__button > * {
+    min-width: 174px;
+  }
 }
 
 ::placeholder {
