@@ -3,8 +3,15 @@
 }
 
 .logo-object {
+  max-height: 32px;
   @include media-mobile {
     width: 158px;
+    max-height: 27px;
+    
+    &:last-child {
+      width: 129px;
+      max-height: 21px;
+    }
   }
 }
 
