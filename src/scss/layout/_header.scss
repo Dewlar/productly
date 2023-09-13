@@ -1,0 +1,43 @@
+.header {
+  background: $color-light;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  padding: 15px 0 17px 0;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include media-tablet {
+    padding-left: 24px;
+  }
+  @include media-mobile {
+    justify-content: center;
+  }
+}
+
+.header__logo-line {
+  display: flex;
+  align-items: center;
+}
+
+.header__hamburger{
+  @include media-mobile {
+    position: absolute;
+    left: 24px;
+  }
+}
+
+.header__buttons {
+  > .button {
+    margin-left: 14px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @include media-mobile {
+    display: none;
+  }
+}

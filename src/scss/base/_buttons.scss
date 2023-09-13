@@ -1,6 +1,7 @@
 .button {
   @extend %font-primary;
   padding: 11px 25px 13px;
+  max-height: 53px;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
@@ -8,6 +9,7 @@
   border-radius: 4px;
   cursor: pointer;
   @extend %transition;
+  white-space: nowrap;
 
   &_bordered {
     background: $color-light;
@@ -40,11 +42,11 @@
   color: $color-primary;
 }
 
-.header__buttons .button {
-  margin-left: 14px;
-}
-
-.header__buttons .button:first-child {
-  margin-left: 0;
-}
+//.header__buttons .button {
+//  margin-left: 14px;
+//}
+//
+//.header__buttons .button:first-child {
+//  margin-left: 0;
+//}
 

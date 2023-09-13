@@ -1,14 +1,33 @@
 .contact-us {
   background: $color-background;
-  padding: 62px 82px;
+  padding: 62px 0 82px;
+  @include media-tablet {
+    text-align: center;
+  }
+}
+
+.contact-us-container {
+  @include media-tablet {
+    flex-direction: column;
+  }
 }
 
 .contact-us__content {
   max-width: 527px;
+  @include media-tablet {
+    max-width: 100%;
+    margin-bottom: 52px;
+  }
+  @include media-mobile {
+    margin-bottom: 22px;
+  }
 }
 
 .contact-us__title {
   margin: 0 0 16px;
+  @include media-mobile {
+    margin: 0 0 8px;
+  }
 }
 
 .contact-us__text {
@@ -19,6 +38,12 @@
   margin: 0 0 19px;
   display: flex;
   align-items: center;
+  @include media-tablet {
+    justify-content: center;
+  }
+  @include media-mobile {
+    @include font($size: 20px, $weight: normal)
+  }
   @include font($size: 2.5rem, $height: 2.6rem, $weight: normal);
 
   a {
@@ -55,14 +80,27 @@
 
 .contact-us__line {
   margin: 0 0 19px;
+  @include media-mobile {
+    flex-direction: column;
+    margin-bottom: 0;
+    > * {
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .contact-us__button {
   > * {
     min-width: 117px;
   }
+  @include media-mobile {
+    margin-top: 24px;
+    > * {
+      min-width: 174px;
+    }
+  }
 }
 
-::placeholder{
+::placeholder {
   color: $color-text-placeholder;
 }

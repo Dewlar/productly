@@ -1,4 +1,4 @@
-@import "../node_modules/normalize-scss/sass/normalize";
+@import "../../node_modules/normalize-scss/sass/normalize";
 @include normalize();
 
 @import "abstract/constants";
@@ -11,6 +11,7 @@
 @import "base/logo";
 @import "base/icons";
 @import "base/tags";
+@import "base/hamburger";
 
 // Layouts
 @import "layout/wrapper";

@@ -1,0 +1,59 @@
+// global tools
+.tools__wrapper {
+  padding-bottom: 90px;
+  background: url(/src/img/backgrounds/tools-bg.svg) no-repeat center bottom;
+  background-size: 100%;
+
+  @include media-tablet {
+    padding-bottom: 53px;
+  }
+  @include media-mobile {
+    padding-bottom: 47px;
+  }
+}
+
+.tools__title {
+  max-width: 46.2rem;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.tools__button {
+  margin-top: 60px;
+  text-align: center;
+}
+
+// each tool block
+.tool-container {
+  @include media-tablet {
+    flex-wrap: wrap;
+    > .tool {
+      flex-basis: 43%;
+      margin-bottom: 41px;
+    }
+    > .tool:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+  }
+  @include media-mobile {
+    flex-wrap: wrap;
+    > .tool {
+      flex-basis: 100%;
+      margin-bottom: 31px;
+    }
+  }
+}
+
+.tool {
+  @include media-tablet {
+    text-align: center;
+  }
+}
+
+.tool__icon {
+  margin-bottom: 30px;
+}
+
+.tool__title {
+  margin: 0 0 16px;
+}
