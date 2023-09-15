@@ -8,7 +8,7 @@ const db = [
         tags: ['Art', 'Design'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const db = [
         tags: ['Culture'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
     {
         id: 3,
@@ -26,7 +26,7 @@ const db = [
         tags: ['Culture', 'Design', 'Art'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const db = [
         tags: ['Culture', 'Design', 'Art'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: true,
+        wide: true,
     },
     {
         id: 5,
@@ -44,7 +44,7 @@ const db = [
         tags: ['Design'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
     {
         id: 6,
@@ -53,7 +53,7 @@ const db = [
         tags: ['Art', 'Design'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
     {
         id: 7,
@@ -62,7 +62,7 @@ const db = [
         tags: ['Culture'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
     {
         id: 8,
@@ -71,7 +71,7 @@ const db = [
         tags: ['Culture', 'Design', 'Art'],
         content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
         date: '01.01.2023',
-        isWide: false,
+        wide: false,
     },
 ];
 
@@ -118,25 +118,42 @@ const showAllStrategies = () => {
     let strategies = document.querySelectorAll('.strategy-wrapper .strategy');
     strategies.forEach(strategy => {
         strategy.classList.remove('strategy_hidden');
+        strategy.style.removeProperty('order');
     })
 }
 
 const filterStrategyBySelectedTag = (selectedTag) => {
+    let visibleCardCounter = 0;
+    let lastVisibleCardPosition = 0;
     let strategies = document.querySelectorAll('.strategy-wrapper .strategy');
-    strategies.forEach(strategy => {
-        if ([...strategy.querySelectorAll('.tag')].some(el => el.innerText === selectedTag.innerText)) {
-            strategy.classList.remove('strategy_hidden');
-        } else {
-            strategy.classList.add('strategy_hidden');
-        }
+    strategies.forEach((strategy, i) => {
+
+        !strategy.classList.contains('stub') && strategy.classList.add('strategy_hidden');
+
+        strategy.style.order = (i).toString();
+
+        strategy.querySelectorAll('.tag').forEach(tag => {
+            if (tag.innerText === selectedTag.innerText) {
+                strategy.classList.remove('strategy_hidden');
+                visibleCardCounter++;
+
+                if (strategy.classList.contains('strategy_wide') && visibleCardCounter % 3 === 0) {
+                    strategies[i].style.order = lastVisibleCardPosition.toString();
+                    strategies[lastVisibleCardPosition].style.order = i.toString();
+                } else {
+                    lastVisibleCardPosition = i;
+                }
+            }
+        })
     })
 }
 
 const renderArticlesToDom = (data) => {
     let strategiesWrapper = getStrategiesWrapper();
     generateArticles(data).forEach(article => {
-        strategiesWrapper.append(article.generateArticle())
+        strategiesWrapper.append(article.generateArticle());
     });
+    strategiesWrapper.insertAdjacentHTML('beforeend', `<article class="stub strategy"></article>`);
 }
 
 const getStrategiesWrapper = () => {
@@ -148,14 +165,16 @@ const getStrategiesWrapper = () => {
 const generateArticles = (data) => {
     let articles = [];
     data.forEach(article => {
-        articles.push(new Article(article))
+        articles.push(new Article(article));
     })
     return articles;
 }
 
 const wideElementPositionChanger = (data) => {
-    data.forEach((el, i) => {
-        el.isWide && ((i + 1) % 3 === 0) && data.splice(i - 1, 2, data[i], data[i - 1])
+    data.forEach((strategy, i) => {
+        strategy.wide
+            && ((i + 1) % 3 === 0)
+            && data.splice(i - 1, 2, data[i], data[i - 1]);
     })
 
     return data;

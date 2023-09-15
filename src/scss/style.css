@@ -779,11 +779,6 @@ h5 {
 .layout-3-col > * {
   flex-basis: 30%;
 }
-.layout-3-col:after {
-  content: "";
-  width: 30%;
-  display: block;
-}
 
 .layout-2-col {
   display: flex;
@@ -1253,6 +1248,11 @@ h5 {
 .strategy__image {
   flex: 0 0 200px;
   object-fit: cover;
+}
+
+.stub {
+  margin: 0;
+  padding: 0;
 }
 
 .about-us {
