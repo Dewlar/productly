@@ -66,6 +66,15 @@ const db = [
     },
     {
         id: 8,
+        title: 'Success Steps For Your Personal Or Business Life Plus Funny Image on the Back',
+        urlToImage: './src/img/strategies/card_4.jpeg',
+        tags: ['Culture', 'Design', 'Art'],
+        content: 'Knowing yourself is the first, and a very critical step in the process of planning your future. How can you figure out what you want to do with your life if you don’t know: What am I going to do with the  rest of my life? What is my dream job? What do I enjoy doing? What’s my passion? What kind of career fits my personality?',
+        date: '01.01.2023',
+        wide: true,
+    },
+    {
+        id: 9,
         title: 'Success Steps For Your Personal Or Business Life',
         urlToImage: './src/img/strategies/card_3.jpeg',
         tags: ['Culture', 'Design', 'Art'],
@@ -125,6 +134,7 @@ const showAllStrategies = () => {
 const filterStrategyBySelectedTag = (selectedTag) => {
     let visibleCardCounter = 0;
     let lastVisibleCardPosition = 0;
+    let wideCounter = 0;
     let strategies = document.querySelectorAll('.strategy-wrapper .strategy');
     strategies.forEach((strategy, i) => {
 
@@ -137,9 +147,12 @@ const filterStrategyBySelectedTag = (selectedTag) => {
                 strategy.classList.remove('strategy_hidden');
                 visibleCardCounter++;
 
-                if (strategy.classList.contains('strategy_wide') && visibleCardCounter % 3 === 0) {
-                    strategies[i].style.order = lastVisibleCardPosition.toString();
-                    strategies[lastVisibleCardPosition].style.order = i.toString();
+                if (strategy.classList.contains('strategy_wide')) {
+                    if ((visibleCardCounter + wideCounter) % 3 === 0) {
+                        strategies[i].style.order = lastVisibleCardPosition.toString();
+                        strategies[lastVisibleCardPosition].style.order = i.toString();
+                    }
+                    wideCounter++;
                 } else {
                     lastVisibleCardPosition = i;
                 }
@@ -171,10 +184,11 @@ const generateArticles = (data) => {
 }
 
 const wideElementPositionChanger = (data) => {
+    let wideCounter = 0;
     data.forEach((strategy, i) => {
         strategy.wide
-            && ((i + 1) % 3 === 0)
-            && data.splice(i - 1, 2, data[i], data[i - 1]);
+        && ((i + 1 + wideCounter++) % 3 === 0)
+        && data.splice(i - 1, 2, data[i], data[i - 1]);
     })
 
     return data;
