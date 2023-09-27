@@ -1,10 +1,10 @@
 export class Article {
-    constructor({id, title, urlToImage, tags, isWide}) {
+    constructor({id, title, urlToImage, tags, wide}) {
         this.id = id;
         this.title = title;
         this.urlToImage = urlToImage;
         this.tags = tags;
-        this.isWide = isWide;
+        this.isWide = wide;
     }
 
     // Article generator
